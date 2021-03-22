@@ -9,6 +9,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
+//DBの設定
 func gormConnect() *gorm.DB {
 	err := godotenv.Load()
 	if err != nil {
