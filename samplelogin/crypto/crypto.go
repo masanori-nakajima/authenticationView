@@ -1,3 +1,4 @@
+//crypto passwordを暗号化させています
 package crypto
 
 import (
