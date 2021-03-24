@@ -1,4 +1,5 @@
-import firebase from 'firebase'
+import axios from 'axios'
+
 
 const config = {
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional(自分の作成したfirebaseで作成)

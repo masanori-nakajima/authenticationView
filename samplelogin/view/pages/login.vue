@@ -82,8 +82,9 @@
 </template>
 
 
-<script>
+<script type="module">
 import axios from 'axios'
+
 export default {
 	data: () => ({
 		userNameRules: [
