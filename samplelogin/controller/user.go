@@ -2,12 +2,32 @@ package controller
 
 import (
 	"log"
-	"model"
-	"net/http"
-	"samplelogin/crypto"
+	"os"
+
+	"github.com/jinzhu/gorm"
+	"github.com/joho/godotenv"
+	"github.com/masanori-nakajima/authenticationView/samplelogin/model"
 
 	"github.com/gin-gonic/gin"
 )
+
+//DBの設定
+func gormConnect() *gorm.DB {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal(err)
+	}
+	DBMS := os.Getenv("myuser_DBMS")
+	USER := os.Getenv("myuser_USER")
+	PASS := os.Getenv("myuser_PASS")
+	DBNAME := os.Getenv("myuser_DBNAME")
+	CONNECT := USER + ":" + PASS + "@/" + DBNAME + "?parseTime=true"
+	db, err := gorm.Open(DBMS, CONNECT)
+	if err != nil {
+		panic(err.Error())
+	}
+	return db
+}
 
 func getUser(username string) model.User {
 	db := gormConnect()
@@ -17,24 +37,6 @@ func getUser(username string) model.User {
 	return user
 }
 
-func PostLoginUser(c *gin.Context) {
-	dbpassword := getUser(c.PostForm("username")).Password
-	log.Println(dbpassword)
-
-	formPassword := c.PostForm("password")
-
-	//ユーザーのパスワードを比較
-	if err := crypto.CompareHashAndPassword(dbpassword, formPassword); err != nil {
-		log.Println("ログインできませんでした。")
-		c.HTML(http.StatusBadRequest, "login.vue", gin.H{"err": err})
-		c.Abort()
-	} else {
-		log.Println("ログイン成功")
-		c.Redirect(302, "/")
-	}
-}
-
-func loadbrowser(c *gin.Context) {
-	c.String(200, "hello world")
-	router.Run("8080")
+func GetLogin(c *gin.Context) {
+	c.File("/home/masanori-nakajima/go/src/github.com/masanori-nakajima/authenticationView/samplelogin/view/pages/login.vue")
 }

@@ -45,7 +45,7 @@
 				block
 				large
 				elevation="2"
-				v-on:click="apilogin"
+				v-on:click="GetLogin"
 				>ログイン</v-btn>
 			</div>
 			</v-card>
@@ -99,7 +99,7 @@ export default {
 
 	}),
 	methods: {
-		apilogin: async function () {
+		GetLogin: async function () {
 			//ここを本来POSTにして外部APIからユーザー名とパスコードがあるのかを検証しあれば返信してもらう、そこから画面の偏移を行う
 			const checklogin = await axios.get("http://localhost:3000/personal-information")
 			.then(response => {
