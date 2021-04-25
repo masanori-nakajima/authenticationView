@@ -24,7 +24,7 @@
 			label="ユーザー名"
 			outlined
 			hint="登録しているユーザー名を入力してください"
-			v-model="model.username"
+			v-model="username"
 			:rules="userNameRules"
 			required
 			></v-text-field>
@@ -34,7 +34,7 @@
 			label="パスワード"
 			hint="登録しているパスワードを入力してください。(11桁)"
 			outlined
-			v-model="model.userpassword"
+			v-model="password"
 			:counter="11"
 			:rules="passwordRules"
 			required
@@ -87,6 +87,7 @@ import axios from 'axios'
 
 export default {
 	data: () => ({
+		//入力規制のルールを設定
 		userNameRules: [
 			v => !!v || "ユーザー名は必須です。"
 		],
