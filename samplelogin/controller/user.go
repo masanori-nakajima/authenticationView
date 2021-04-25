@@ -38,5 +38,7 @@ func getUser(username string) model.User {
 }
 
 func GetLogin(c *gin.Context) {
-	c.File("/home/masanori-nakajima/go/src/github.com/masanori-nakajima/authenticationView/samplelogin/view/pages/login.vue")
+	c.JSON(200, gin.H{
+		"message": "hello world",
+	})
 }

@@ -7,7 +7,7 @@
     >
       <v-list-item>
         <v-list-item-title class="display-2 text--darken-2">
-          Docoda
+          sample
         </v-list-item-title>
         <v-btn icon @click= "drawer = false" >
           <v-icon>mdi-chevron-left</v-icon>
@@ -37,7 +37,7 @@
       <!-- アプリケーションバーがここに入る -->
       <v-app-bar-nav-icon @click="drawer = true" />
       <!-- スマホ会社の偽名 -->
-      <v-toolbar-title>Docoda</v-toolbar-title>
+      <v-toolbar-title>sample</v-toolbar-title>
     </v-app-bar>
 
     <v-main>

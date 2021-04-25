@@ -1,0 +1,37 @@
+[
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "/home/masanori-nakajima/go/src/github.com/masanori-nakajima/authenticationView/samplelogin/view/pages/inspire.vue",
+    "chunkName": "pages/inspire",
+    "_name": "_358295e1"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/home/masanori-nakajima/go/src/github.com/masanori-nakajima/authenticationView/samplelogin/view/pages/login.vue",
+    "chunkName": "pages/login",
+    "_name": "_3687c2b0"
+  },
+  {
+    "name": "personal-information",
+    "path": "/personal-information",
+    "component": "/home/masanori-nakajima/go/src/github.com/masanori-nakajima/authenticationView/samplelogin/view/pages/personal-information.vue",
+    "chunkName": "pages/personal-information",
+    "_name": "_4acb7728"
+  },
+  {
+    "name": "signup",
+    "path": "/signup",
+    "component": "/home/masanori-nakajima/go/src/github.com/masanori-nakajima/authenticationView/samplelogin/view/pages/signup.vue",
+    "chunkName": "pages/signup",
+    "_name": "_326aff3e"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/masanori-nakajima/go/src/github.com/masanori-nakajima/authenticationView/samplelogin/view/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_6ce01f99"
+  }
+]

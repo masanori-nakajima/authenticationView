@@ -58,6 +58,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['axios'], // 追加
-  }
+    transpile: ['axios'], // 追加,
+  },
 }
