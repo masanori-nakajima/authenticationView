@@ -1,16 +1,17 @@
 package main
 
 import (
-	"github.com/masanori-nakajima/authenticationView/samplelogin/controller"
-
 	"github.com/gin-gonic/gin"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"github.com/masanori-nakajima/authenticationView/samplelogin/controller"
 )
 
 func main() {
 	router := gin.Default()
 
-	router.GET("/", controller.GetLogin)
+	router.Static("/dist", "/home/masanori-nakajima/go/src/github.com/masanori-nakajima/authenticationView/samplelogin/view/dist")
+
+	router.GET("/pages", controller.GetLogin)
 
 	router.Run(":8080")
 }
