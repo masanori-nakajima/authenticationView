@@ -17,6 +17,7 @@
 			align-content="center"
 			>ログイン
 			</v-card-title>
+      <v-form ref="login_form">
 			<v-text-field
 			input
 			type="text"
@@ -39,6 +40,7 @@
 			:rules="passwordRules"
 			required
 			></v-text-field>
+      </v-form>
 			<div class="login-btn">
 				<v-btn
 				class="login orange"
@@ -83,10 +85,12 @@
 
 
 <script type="module">
-import axios from 'axios'
+
 
 export default {
 	data: () => ({
+		username: "",
+		password: "",
 		//入力規制のルールを設定
 		userNameRules: [
 			v => !!v || "ユーザー名は必須です。"
@@ -101,16 +105,17 @@ export default {
 
 	}),
 	methods: {
-		GetLogin: async function () {
-			//ここを本来POSTにして外部APIからユーザー名とパスコードがあるのかを検証しあれば返信してもらう、そこから画面の偏移を行う
-			const checklogin = await axios.get("http://localhost:3000/personal-information")
-			.then(response => {
-        console.log('status:', response.status); // 200
-				this.$router.push("/personal-information")
-			}).catch(err => {
-        console.log('err:', err);
-    	});
-		},
+		GetLogin() {
+			if (this.$refs.login_form.validate()) {
+        		// すべてのバリデーションが通過したときのみ
+        		// if文の中に入る
+        	this.success = true;
+          console.log("ok")
+    	  } else {
+        	this.success = false;
+          console.log("faile")
+    	}
+		}
 	}
 }
 
